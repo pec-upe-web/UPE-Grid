@@ -275,3 +275,39 @@ document.querySelectorAll('a[href^="#"]:not(.park-card)').forEach(anchor => {
         if (t) window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' });
     });
 });
+
+// ── 最新消息 Modal ──
+const newsModal    = document.getElementById('news-modal');
+const modalOverlay = newsModal ? newsModal.querySelector('.news-modal-overlay') : null;
+const modalClose   = newsModal ? newsModal.querySelector('.news-modal-close') : null;
+const modalTag     = document.getElementById('modal-tag');
+const modalDate    = document.getElementById('modal-date');
+const modalTitle   = document.getElementById('modal-title');
+const modalBody    = document.getElementById('modal-body');
+
+function openNewsModal(item) {
+    if (!newsModal) return;
+    modalTag.textContent   = item.dataset.tag   || '';
+    modalDate.textContent  = item.dataset.date  || '';
+    modalTitle.textContent = item.dataset.title || '';
+    modalBody.innerHTML    = `<p>${item.dataset.content || ''}</p>`;
+    newsModal.classList.add('open');
+    newsModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (cursor) cursor.style.display = 'none';
+}
+
+function closeNewsModal() {
+    if (!newsModal) return;
+    newsModal.classList.remove('open');
+    newsModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (cursor) cursor.style.display = '';
+}
+
+document.querySelectorAll('.news-item').forEach(item => {
+    item.addEventListener('click', () => openNewsModal(item));
+});
+if (modalOverlay) modalOverlay.addEventListener('click', closeNewsModal);
+if (modalClose)   modalClose.addEventListener('click', closeNewsModal);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNewsModal(); });
