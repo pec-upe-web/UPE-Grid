@@ -20,11 +20,11 @@
         <button id="nav-toggle" class="nav-toggle" aria-label="開啟選單">
             <span></span><span></span><span></span>
         </button>
-        <div class="nav-menu">
-            <a href="#about">關於統流</a>
-            <a href="#locations">據點佈局</a>
-            <a href="#tech">技術實力</a>
-            <a href="#contact">聯絡我們</a>
+        <div class="nav-menu" id="nav-menu">
+            <a href="#about">公司簡介 About Us</a>
+            <a href="#tech">服務項目 Services</a>
+            <a href="#news">最新消息 News</a>
+            <a href="#contact">聯絡我們 Contact Us</a>
         </div>
     </nav>
 
@@ -179,6 +179,59 @@
                 </div>
             </div>
         </section>
+
+        <!-- 最新消息 -->
+        <section id="news" class="news-section">
+            <span class="section-tag">03 — LATEST NEWS</span>
+            <h2 class="news-heading reveal-up">最新消息</h2>
+            <ul class="news-list">
+                <li class="news-item reveal-up"
+                    data-date="2026.03.01" data-tag="園區動態"
+                    data-title="新市物流園區正式啟用，南台灣最大複合式物流中心開幕"
+                    data-content="新市物流園區於 2026 年 3 月正式啟用，總建物面積達 47,000 坪，為南台灣規模最大的複合式物流中心。園區整合常溫、低溫與電商倉儲功能，並全面導入自動化設備，預計每日可處理逾 50 萬件貨物，大幅提升區域物流效能。">
+                    <div class="news-row">
+                        <span class="news-date">2026.03.01</span>
+                        <span class="news-tag">園區動態</span>
+                        <span class="news-title">新市物流園區正式啟用，南台灣最大複合式物流中心開幕</span>
+                        <span class="news-link">READ MORE →</span>
+                    </div>
+                </li>
+                <li class="news-item reveal-up" style="transition-delay:0.05s;"
+                    data-date="2026.02.14" data-tag="企業消息"
+                    data-title="統流開發完成桃園航空城物流園區土地取得，正式啟動規劃作業"
+                    data-content="統流開發已完成桃園航空城物流園區約 25,000 坪土地之取得程序，預計規劃總建物面積 68,000 坪，鄰近桃園國際機場，可提供空陸聯運服務，目標於 2028 年竣工啟用。">
+                    <div class="news-row">
+                        <span class="news-date">2026.02.14</span>
+                        <span class="news-tag">企業消息</span>
+                        <span class="news-title">統流開發完成桃園航空城物流園區土地取得，正式啟動規劃作業</span>
+                        <span class="news-link">READ MORE →</span>
+                    </div>
+                </li>
+                <li class="news-item reveal-up" style="transition-delay:0.10s;"
+                    data-date="2026.01.20" data-tag="技術導入"
+                    data-title="UPE 導入 AI 倉儲調度系統，揀貨效率提升 40%"
+                    data-content="統流開發與科技夥伴合作，於新市物流園區正式部署 AI 智慧調度系統，透過即時資料分析優化貨物動線配置，揀貨正確率達 99.97%，整體作業效率較傳統模式提升約 40%。">
+                    <div class="news-row">
+                        <span class="news-date">2026.01.20</span>
+                        <span class="news-tag">技術導入</span>
+                        <span class="news-title">UPE 導入 AI 倉儲調度系統，揀貨效率提升 40%</span>
+                        <span class="news-link">READ MORE →</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 最新消息 Modal -->
+        <div id="news-modal" class="news-modal" aria-hidden="true">
+            <div class="news-modal-overlay"></div>
+            <div class="news-modal-box" role="dialog" aria-modal="true">
+                <button class="news-modal-close" aria-label="關閉">✕</button>
+                <span id="modal-tag" class="news-tag"></span>
+                <p id="modal-date" class="modal-date"></p>
+                <h3 id="modal-title"></h3>
+                <div id="modal-body" class="modal-body"></div>
+            </div>
+        </div>
 
         <section id="links" class="related-links reveal-up">
             <a href="#" class="link-item">
